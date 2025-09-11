@@ -1,8 +1,43 @@
 # CS121ProceduralHorseRace
+1. include iostream, random
+1. declare functions
+1. const int LENGTH = 15;
 ## Algorithm for main
+1. int[5] horseArray = {0, 0, 0, 0, 0};
+1. boolean winnerExists = false; // tells the program whether there is a winner
+1. while (winnerExists == false)
+    1. for (int i = 0; i < horseArray.length; i++)
+        1. advance(i, horseArray);
+        1. printLane(i, horseArray);
+        1. winnerExists = isWinner(i, horseArray);
+        1. print "Press enter for another turn";
+        1. wait for user to press enter
+    1. end for
+1. end while
+1. end main
 ## Algorithm for advance
-0. Parameters: int, int pointer
+0. Parameters: int horseNum, int pointer horses
+1. int coin = -1;
+1. randomly assign coin either 0 or 1
+1. horses[horseNum] += coin;
+1. end advance
 ## Algorithm for printLane
-0. Parameters: int, int pointer
+0. Parameters: int horseNum, int pointer horses
+1. for (int i = 0; i < horses.length; i++)
+    1. if (i == horses[horseNum])
+        1. print horseNum;
+    1. else
+        1. print ".";
+    1. end if
+1. end for
+1. print new line
+1. end printLane
 ## Algorithm for isWinner
-0. Parameters: int, int pointer
+0. Parameters: int horseNum, int pointer horses; return a boolean
+1. If (horses[horseNum] >= LENGTH)
+    1. print "Horse " + horseNum + " WINS!!!";
+    1. return true;
+1. else
+    1. return false;
+1. end if
+1. end isWinner
