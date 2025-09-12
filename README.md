@@ -4,14 +4,16 @@
 1. const int LENGTH = 15;
 ## Algorithm for main
 1. int[5] horseArray = {0, 0, 0, 0, 0};
-1. boolean winnerExists = false; // tells the program whether there is a winner
-1. while (winnerExists == false)
+1. boolean keepGoing = true;
+1. while (keepGoing == true)
     1. for (int i = 0; i < horseArray.length; i++)
         1. advance(i, horseArray);
         1. printLane(i, horseArray);
-        1. winnerExists = isWinner(i, horseArray);
+        1. if (isWinner(i, horseArray))
+            1. keepGoing = false;
+        1. end if
         1. print "Press enter for another turn";
-        1. wait for user to press enter
+        1. wait for user to press enter (cin.ignore());
     1. end for
 1. end while
 1. end main
