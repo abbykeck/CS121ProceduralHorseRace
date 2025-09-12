@@ -11,17 +11,32 @@ const int ARRAY_LENGTH = 5;
 int main() {
 	int horseArray[ARRAY_LENGTH] = {0, 0, 0, 0, 0};
 	bool keepGoing = true;
+	std::cout << "STARTING POSITION:" << std::endl;
+	for (int i = 0; i < ARRAY_LENGTH; i++) {
+		printLane(i, horseArray);
+	} // end for
+	int bet = -1;
+	int winner = -1;
+	std::cout << "Which horse will win? Enter your bet: ";
+	std::cin >> bet;
+	std::cin.ignore();
 	while (keepGoing == true) {
 		for (int i = 0; i < ARRAY_LENGTH; i++) {
 			advance(i, horseArray);
 			printLane(i, horseArray);
 			if (isWinner(i, horseArray)) {
 				keepGoing = false;
+				winner = i;
 			} // end if
 		} // end for
 		std::cout << "Press enter for another turn" << std::endl;
 		std::cin.ignore();
 	} // end while
+	if (winner == bet) {
+		std::cout << "Congrats, you won your bet! You can have a cookie." << std::endl;
+	} else {
+		std::cout << "Sorry, you lost your bet. Better luck next time!" << std::endl;
+	} // end if
 	return 0;
 } // end main
 

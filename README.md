@@ -6,17 +6,31 @@
 ## Algorithm for main
 1. int[ARRAYLENGTH] horseArray = {0, 0, 0, 0, 0};
 1. boolean keepGoing = true;
+1. print "STARTING POSITION:"
+1. for (int i = 0; i < ARRAYLENGTH; i++)
+    1. printLane(i, horseArray);
+1. end for
+1. int bet = -1;
+1. int winner = -1;
+1. print "Which horse will win? Enter your bet:"
+1. put user input into bet
 1. while (keepGoing == true)
     1. for (int i = 0; i < ARRAYLENGTH; i++)
         1. advance(i, horseArray);
         1. printLane(i, horseArray);
         1. if (isWinner(i, horseArray))
             1. keepGoing = false;
+            1. winner = i;
         1. end if
         1. print "Press enter for another turn";
         1. wait for user to press enter (cin.ignore());
     1. end for
 1. end while
+1. if (winner == bet)
+    1. print "Congrats, you won your bet! You can have a cookie.";
+1. else
+    1. print "Sorry, you lost your bet. Better luck next time!"
+1. end if
 1. end main
 ## Algorithm for advance
 0. Parameters: int horseNum, int pointer horses
