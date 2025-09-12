@@ -7,7 +7,7 @@
 1. int[ARRAYLENGTH] horseArray = {0, 0, 0, 0, 0};
 1. boolean keepGoing = true;
 1. while (keepGoing == true)
-    1. for (int i = 0; i < horseArray.length; i++)
+    1. for (int i = 0; i < ARRAYLENGTH; i++)
         1. advance(i, horseArray);
         1. printLane(i, horseArray);
         1. if (isWinner(i, horseArray))
@@ -26,7 +26,7 @@
 1. end advance
 ## Algorithm for printLane
 0. Parameters: int horseNum, int pointer horses
-1. for (int i = 0; i < horses.length; i++)
+1. for (int i = 0; i < TRACKLENGTH; i++)
     1. if (i == horses[horseNum])
         1. print horseNum;
     1. else
@@ -37,7 +37,7 @@
 1. end printLane
 ## Algorithm for isWinner
 0. Parameters: int horseNum, int pointer horses; return a boolean
-1. If (horses[horseNum] >= LENGTH)
+1. If (horses[horseNum] >= TRACKLENGTH)
     1. print "Horse " + horseNum + " WINS!!!";
     1. return true;
 1. else
