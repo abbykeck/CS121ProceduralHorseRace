@@ -10,12 +10,14 @@ const int ARRAY_LENGTH = 5;
 
 int main() {
 	int horseArray[ARRAY_LENGTH] = {0, 0, 0, 0, 0};
-	bool winnerExists = false;
-	while (winnerExists == false) {
+	bool keepGoing = true;
+	while (keepGoing == true) {
 		for (int i = 0; i < ARRAY_LENGTH; i++) {
 			advance(i, horseArray);
 			printLane(i, horseArray);
-			winnerExists = isWinner(i, horseArray);
+			if (isWinner(i, horseArray)) {
+				keepGoing = false;
+			} // end if
 		} // end for
 		std::cout << "Press enter for another turn" << std::endl;
 		std::cin.ignore();
