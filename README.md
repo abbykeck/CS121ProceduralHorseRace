@@ -1,9 +1,10 @@
 # CS121ProceduralHorseRace
 1. include iostream, random
 1. declare functions
-1. const int LENGTH = 15;
+1. const int TRACKLENGTH = 15;
+1. const int ARRAYLENGTH = 5;
 ## Algorithm for main
-1. int[5] horseArray = {0, 0, 0, 0, 0};
+1. int[ARRAYLENGTH] horseArray = {0, 0, 0, 0, 0};
 1. boolean keepGoing = true;
 1. while (keepGoing == true)
     1. for (int i = 0; i < horseArray.length; i++)
